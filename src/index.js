@@ -1,17 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
+import { ReducerProvider } from "./providers/useReducerProvider";
+import { PlayListProvider } from "./providers/PlayListContextProvier";
+import { HistoryProvider } from "./providers/HistoryContextProvider";
+import { LoaderProvider } from "./providers/LoaderContextProvider";
+import { AuthProvider } from "./providers/AuthProvider";
 
+const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <AuthProvider>
+        <LoaderProvider>
+          <ReducerProvider>
+            <HistoryProvider>
+              <PlayListProvider>
+                <App />
+              </PlayListProvider>
+            </HistoryProvider>
+          </ReducerProvider>
+        </LoaderProvider>
+      </AuthProvider>
+    </Router>
   </React.StrictMode>,
-  document.getElementById('root')
+  rootElement
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

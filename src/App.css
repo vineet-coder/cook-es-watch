@@ -1,38 +1,54 @@
+@import "./style/Header.css";
+@import "./style/SideNav.css";
+@import "./style/Loader.css";
+@import "./style/LoginFailedModel.css";
+@import "./style/LogIn.css";
+@import "./style/SignUp.css";
+@import "./style/UserActivityModel.css";
+@import "./style/Home.css";
+@import "./style/VideoList.css";
+@import "./style/VideoListCard.css";
+@import "./style/History.css";
+@import "./style/HistoryCard.css";
+@import "./style/History.css";
+@import "./style/WatchLater.css";
+@import "./style/PlayList.css";
+@import "./style/LikedVideos.css";
+@import "./style/VideoPage.css";
+@import "./style/SmallLoder.css";
+
 .App {
   text-align: center;
 }
+:root {
+  --primaryColor: #1e282f;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  --secondaryColor: #487eb0;
+  --textColor: #dfe6e9;
+}
+body {
+  color: var(--textColor);
+  background-color: var(--primaryColor);
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+*:focus {
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.link {
+  color: var(--textColor);
+  text-decoration: none;
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+p {
+  margin: 0;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
 }
